@@ -6,7 +6,10 @@ require('dotenv').config();
 const blogRoutes = require('./routes/blogRoutes');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
+
 app.use(express.json());
 
 app.use('/api/blogs', blogRoutes);
