@@ -8,7 +8,6 @@ import "./App.css";
 function App() {
   const [posts, setPosts] = useState([]);
 
-  // Fetch previously posted blogs on first load
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/blogs")
