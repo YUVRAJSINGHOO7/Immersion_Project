@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import WeatherCard from '../components/WeatherCard';
 
-const API_KEY = 'ed2c6f01bb2131ab77462e6db97d0939';
+//const API_KEY = 'ed2c6f01bb2131ab77462e6db97d0939';
 
 function Home() {
     const [city, setCity] = useState('');
@@ -9,7 +9,6 @@ function Home() {
     const [loading, setLoading] = useState(false);
     const [unit, setUnit] = useState('metric');
 
-    // Fetch by city name or by coords
     const fetchWeather = async (query, type = 'city') => {
         setLoading(true);
         let url;
@@ -37,7 +36,6 @@ function Home() {
         setLoading(false);
     };
 
-    // Auto detect location on load
     useEffect(() => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
@@ -49,16 +47,14 @@ function Home() {
                 }
             );
         }
-        // eslint-disable-next-line
-    }, [unit]); // triggers refetch on unit change
 
-    // Submit search form
+    }, [unit]);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (city.trim()) fetchWeather(city);
     };
 
-    // Toggle unit
     const toggleUnit = () => {
         setUnit(prev => (prev === 'metric' ? 'imperial' : 'metric'));
         if (weather && weather.coord) {
