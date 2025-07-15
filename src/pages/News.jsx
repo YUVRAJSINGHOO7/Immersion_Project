@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-//const API_KEY = '37c5c787ed158bee492a3330a624bfa5'; 
+const API_KEY = '37c5c787ed158bee492a3330a624bfa5'; 
 
 function News() {
   const [articles, setArticles] = useState([]);
