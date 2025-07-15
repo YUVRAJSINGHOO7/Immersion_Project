@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import WeatherCard from '../components/WeatherCard';
 
-//const API_KEY = 'ed2c6f01bb2131ab77462e6db97d0939';
+const API_KEY = 'ed2c6f01bb2131ab77462e6db97d0939';
 
 function Home() {
     const [city, setCity] = useState('');
