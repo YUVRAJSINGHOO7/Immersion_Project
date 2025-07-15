@@ -10,6 +10,13 @@ import News from './pages/News';
 function App() {
   return (
     <div className="app">
+      {/* Background video */}
+      <video autoPlay muted loop id="background-video">
+        <source src="/background.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Navigation and Routes */}
       <nav>
         <Link to="/">Home</Link> |{" "}
         <Link to="/forecast">Forecast</Link> |{" "}
