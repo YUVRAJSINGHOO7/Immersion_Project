@@ -5,6 +5,7 @@ import Forecast from './pages/Forecast';
 import About from './pages/About';
 import 'leaflet/dist/leaflet.css';
 import WeatherMap from './pages/WeatherMap';
+import News from './pages/News';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Link to="/">Home</Link> |{" "}
         <Link to="/forecast">Forecast</Link> |{" "}
         <Link to="/about">About</Link>|{" "}
-        <Link to="/map">Weather Map</Link>
+        <Link to="/map">Weather Map</Link>|{" "}
+        <Link to="/news">Weather News</Link>
       </nav>
 
       <Routes>
@@ -21,6 +23,7 @@ function App() {
         <Route path="/forecast" element={<Forecast />} />
         <Route path="/about" element={<About />} />
         <Route path="/map" element={<WeatherMap />} />
+        <Route path="/news" element={<News />} />
       </Routes>
     </div>
   );
