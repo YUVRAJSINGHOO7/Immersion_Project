@@ -47,7 +47,6 @@ function Home() {
                 }
             );
         }
-
     }, [unit]);
 
     const handleSubmit = (e) => {
@@ -63,7 +62,7 @@ function Home() {
     };
 
     return (
-        <>
+        <div className="page-container">
             <h1>Weather App 🌤️</h1>
             <form onSubmit={handleSubmit}>
                 <input
@@ -81,7 +80,7 @@ function Home() {
             </div>
             {loading && <p>Loading...</p>}
             {weather && <WeatherCard weather={weather} unit={unit} />}
-        </>
+        </div>
     );
 }
 

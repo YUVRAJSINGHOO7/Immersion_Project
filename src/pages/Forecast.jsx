@@ -34,7 +34,6 @@ function Forecast() {
         setLoading(false);
     };
 
-    // Try geolocation on load
     useEffect(() => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
@@ -45,14 +44,12 @@ function Forecast() {
                 },
                 err => {
                     console.log("Geolocation denied.", err);
-                    // fallback to a default city
                     fetchForecast("Delhi", 'city');
                 }
             );
         } else {
             fetchForecast("Delhi", 'city');
         }
-        // eslint-disable-next-line
     }, [unit]);
 
     const toggleUnit = () => {
@@ -63,7 +60,7 @@ function Forecast() {
     };
 
     return (
-        <div>
+        <div className="page-container">
             <h1>5-Day Forecast 📅</h1>
             <div className="unit-toggle-container">
                 <button className="unit-toggle" onClick={toggleUnit}>
