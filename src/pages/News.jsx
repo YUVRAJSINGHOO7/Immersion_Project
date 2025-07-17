@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const API_KEY = '37c5c787ed158bee492a3330a624bfa5'; 
+const API_KEY = '37c5c787ed158bee492a3330a624bfa5';
 
 function News() {
   const [articles, setArticles] = useState([]);
@@ -17,12 +17,12 @@ function News() {
   }, []);
 
   return (
-    <div>
+    <div className="page-container">
       <h1>Weather News 📰</h1>
       {articles.length === 0 && <p>Loading news...</p>}
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {articles.map((article, i) => (
-          <li key={i} style={{ marginBottom: '20px', textAlign: 'left' }}>
+          <li key={i} className="news-card">
             <a href={article.url} target="_blank" rel="noopener noreferrer">
               <h3>{article.title}</h3>
               <p>{article.description}</p>
